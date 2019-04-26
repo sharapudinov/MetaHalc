@@ -1,0 +1,22 @@
+{
+  "name": "Sharapudinov/MetaHashCalcPro",
+  "description": "MetaHash Forging Reward Calculator",
+  "minimum-stability": "stable",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Shamil Sharapudinov",
+      "email": "sharapudinov@mail.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "" : "src/"
+    }
+  },
+  "require": {
+    "ext-bcmath": "*",
+    "ext-gmp": "*",
+    "ext-json": "*"
+  }
+}
