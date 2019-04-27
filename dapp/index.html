@@ -16,21 +16,27 @@
 
 <body style="background: #fff;">
 <div class="container" id="container">
+    <div class="offset-by-ten two columns">
+        <a href="metapay://pay.metahash.org/?to=0x00d3faa7e8443c1ee8c4c4ab203aff2e1ff83109ad211e42bc&description=CalcProDonation&data=31415926&value=10&currency=MHC">
+            Donate Dapp
+        </a>
+    </div>
     <h4 class="docs-header" style="margin-top: 5%">
         MultiWallet Random Reward Calculator
     </h4>
     <div class="row">
         <div class="four columns">
             <label for="total">Online wallets quantity</label>
-            <input class="u-full-width" type="text" value="25000" id="total" name="total">
+            <input class="u-full-width" type="number" value="25000" id="total" name="total">
         </div>
         <div class="four columns">
             <label for="own">Your wallets quantity</label>
-            <input class="u-full-width" type="text" value="1" id="own" name="own">
+            <input class="u-full-width" type="number" value="1" id="own" name="own">
         </div>
         <div class="four columns">
             <label for="frozen_amount">Frozen amount to forging</label>
-            <input class="u-full-width" type="text" value="1" id="frozen_amount" name="own">
+            <input class="u-full-width" id="frozen_amount" name="frozen_amount" readonly=“readonly” type="number"
+                   value="1">
         </div>
     </div>
     <div class="row">
