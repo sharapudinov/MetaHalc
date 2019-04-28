@@ -1,16 +1,19 @@
 $(function () {
     var button = $('#calc');
-    button.on('click', function () {
+    button.on('click', function (e) {
+        e.preventDefault();
         calc($('#total').val(), $('#own').val());
     });
     button.trigger('click');
 });
 
 function calc(total, own) {
+    $('#wait').show();
     $.getJSON({
-        url: 'http://176.120.202.227/calc/?total=' + total + '&own=' + own,
+        url: 'http://metahalculato.ru/calc/?total=' + total + '&own=' + own,
         context: $('#container')
     }).done(function (result) {
+        $('#wait').hide();
         $('table').remove();
         $('#frozen_amount').val(result['FROZEN_AMOUNT']);
         $(this).append(createTable(result['PLACE_MATRIX']));
