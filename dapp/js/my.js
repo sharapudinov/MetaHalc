@@ -1,22 +1,46 @@
 $(function () {
-    var button = $('#calc');
-    button.on('click', function (e) {
-        e.preventDefault();
-        calc($('#total').val(), $('#own').val());
-    });
-    button.trigger('click');
+    var navMenuItem=$('#navMenu .navbar-item');
+
+    navMenuItem.on('click',router);
+
+    $(navMenuItem.toArray()[0]).trigger('click');
+
 });
 
+function router(e) {
+    e.preventDefault();
+    $.ajax(
+        'http://metahalculato.ru/sections/'+this.dataset.target+'/',
+        {
+            complete : function (result) {
+                $('#ajax_result').remove();
+                insertAfter(
+                    createElementFromHTML(result.responseText),
+                    document.querySelector('#navbar')
+                );
+                var button = $('#calc');
+                button.on('click', function (e) {
+                    e.preventDefault();
+                    calc($('#total').val(), $('#own').val());
+                });
+                button.trigger('click');
+
+            }
+        }
+    )
+}
 function calc(total, own) {
     $('#wait').show();
     $.getJSON({
         url: 'http://metahalculato.ru/calc/?total=' + total + '&own=' + own,
-        context: $('#container')
     }).done(function (result) {
         $('#wait').hide();
         $('table').remove();
         $('#frozen_amount').val(result['FROZEN_AMOUNT']);
-        $(this).append(createTable(result['PLACE_MATRIX']));
+        $('#table-container')
+            .append(createTable(result['PLACE_MATRIX']));
+        $('table').addClass('table is-fullwidth is-striped is-bordered');
+
     });
 }
 
@@ -28,7 +52,8 @@ function createTable(tableData) {
         DAILY_ROI: 'Average daily ROI (%)',
     };
     var table = document.createElement('table');
-    var header = document.createElement("tr");
+
+    var header = document.createElement("thead");
     // get first row to be header
     var headers = ['Place'];
 
@@ -58,13 +83,43 @@ function createTable(tableData) {
             6: 'From 101 to 1000',
             7: 'Total'
         };
-        row = table.insertRow();
-        cell=row.insertCell();
-        cell.textContent=placeDictionary[index];
-        Object.values(rowData).forEach(function (cellData) {
-            cell = row.insertCell();
-            cell.textContent = cellData;
-        });
+        var collback;
+        if(index < tableData.length-1){
+          row=  table.insertRow();
+            callback = function (cellData) {
+                cell = row.insertCell();
+                cell.textContent = cellData;
+            }
+        } else {
+            callback = function (cellData) {
+                cell = row.insertCell();
+                cell.outerHTML = '<th>'+cellData+'</th>';
+            };
+            row=table.createTFoot().insertRow();
+        }
+        cell = row.insertCell();
+        cell.outerHTML = '<th>' + placeDictionary[index] + '</th>';
+
+
+        Object.values(rowData).forEach(callback);
     });
     return (table);
+}
+
+function insertAfter(elem, refElem) {
+    var parent = refElem.parentNode;
+    var next = refElem.nextSibling;
+    if (next) {
+        return parent.insertBefore(elem, next);
+    } else {
+        return parent.appendChild(elem);
+    }
+}
+
+function createElementFromHTML(htmlString) {
+    var div = document.createElement('div');
+    div.innerHTML = htmlString.trim();
+
+    // Change this to div.childNodes to support multiple top-level nodes
+    return div.firstChild;
 }

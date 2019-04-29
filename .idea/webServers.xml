@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3836b41a-5156-4720-a0fc-778844493894" name="jino php7.3+gmp" url="http://metahalculato.ru">
+        <fileTransfer host="ovz2.j626540.m843p.vps.myjino.ru" port="49283" rootFolder="/var/www/html/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="49283" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

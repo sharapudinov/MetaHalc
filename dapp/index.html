@@ -1,62 +1,79 @@
+<!--
+  ~ Copyright (c) 2019.
+  -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>MetaHash DApp from https://metawat.ch/</title>
+    <title>MetaHash Forging Calculator Pro http://metahalculato.ru/</title>
     <meta name="description" content="MetaHash Reward Calculator Pro">
-    <meta name="author" content="Shamil Sharpudinov">
+    <meta name="author" content="Shamil Sharapudinov">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/bulma-bages.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="js/my.js"></script>
-    <style>
-        #wait {
-           display: none;
-        }
-    </style>
 </head>
 
-<body style="background: #fff;">
-<div class="container" id="container">
-    <div class="offset-by-ten two columns">
-        <a href="metapay://pay.metahash.org/?to=0x00d3faa7e8443c1ee8c4c4ab203aff2e1ff83109ad211e42bc&description=CalcProDonation&data=31415926&value=10&currency=MHC">
-            Donate Dapp
-        </a>
-    </div>
-    <h4 class="docs-header" style="margin-top: 5%">
-        MultiWallet Random Reward Calculator
-    </h4>
-    <div class="row">
-        <div class="four columns">
-            <label for="total">Online wallets quantity</label>
-            <input class="u-full-width" type="number" value="25000" id="total" name="total">
-        </div>
-        <div class="four columns">
-            <label for="own">Your wallets quantity</label>
-            <input class="u-full-width" type="number" value="1" id="own" name="own">
-        </div>
-        <div class="four columns">
-            <label for="frozen_amount">Frozen amount to forging</label>
-            <input class="u-full-width" id="frozen_amount" name="frozen_amount" readonly=“readonly” type="number"
-                   value="1">
-        </div>
-    </div>
-    <div class="row">
-        <div class="twelve columns">
-            <div class="row">
-                <div class="two columns">
-                    <a id="calc" class="button button-primary">Calculate!</a>
-                </div>
-                <div id="wait" class="two columns">
-                    <img src="img/Wait.gif" height="40px">
-                </div>
+<body class="has-background-white-bis has-navbar-fixed-top">
+<nav id="navbar" class="navbar is-fixed-top has-shadow navbar-spaced">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="button has-badge-rounded has-badge-outlined has-badge-primary" data-badge="1.0.1" href="/"
+               id="logo">
+                    <span>
+                        MataHalc
+                    </span>
+            </a>
+
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenu" aria-label="menu"
+                 aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
+
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a class="navbar-item bd-navbar-item-documentation" data-target="wallet_forging">
+                    Wallet Forging
+                </a>
+
+                <a class="navbar-item bd-navbar-item-videos" data-target="delegate_forging">
+                    Delegate Forging
+                </a>
+                <a class="navbar-item bd-navbar-item-videos" data-target="node_forging">
+                    Node Forging
+                </a>
+
+            </div>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a href="metapay://pay.metahash.org/?to=0x00d3faa7e8443c1ee8c4c4ab203aff2e1ff83109ad211e42bc&description=CalcProDonation&data=31415926&value=10&currency=MHC">
+                    Donate Dapp
+                </a>
+            </div>
+
+        </div>
     </div>
-</div>
+</nav>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p><strong>MetaHalc</strong> by <a href="mailto:sharapudinov@mail.ru">Shamil Sharapudinov</a>. The source code
+            is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+    </div>
+</footer>
 </body>
 
 </html>
