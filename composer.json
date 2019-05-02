@@ -18,6 +18,6 @@
     "php": ">=7.3",
     "ext-bcmath": "*",
     "ext-gmp": "*",
-    "ext-json": "*",
+    "ext-json": "*"
   }
 }
