@@ -15,9 +15,10 @@
     }
   },
   "require": {
-    "php": "7.3",
+    "php": "7.3.4",
     "ext-bcmath": "*",
     "ext-gmp": "*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "xboston/metahash": "dev-master"
   }
 }
