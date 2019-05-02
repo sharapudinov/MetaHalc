@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-use MetaHash\Calculator;
+use MetaHash\Calculator\WalletFoging;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
 
@@ -15,6 +15,6 @@ $total=isset($_REQUEST['total'])?$_REQUEST['total']:'25000';
 $own=isset($_REQUEST['own'])?$_REQUEST['own']:'50';
 
 
-echo json_encode(Calculator::randomRewardMatrix($total,$own));
+echo json_encode(WalletFoging::randomRewardMatrix($total,$own));
 
 ?>

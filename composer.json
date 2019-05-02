@@ -1,5 +1,5 @@
 {
-  "name": "Sharapudinov/MetaHashCalcPro",
+  "name": "Sharapudinov/MetaHalc",
   "description": "MetaHash Forging Reward Calculator",
   "minimum-stability": "stable",
   "license": "GPL",
@@ -15,6 +15,7 @@
     }
   },
   "require": {
+    "php": "7.3",
     "ext-bcmath": "*",
     "ext-gmp": "*",
     "ext-json": "*"

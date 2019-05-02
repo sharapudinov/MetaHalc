@@ -1,9 +1,9 @@
 <?php
 
 
-namespace MetaHash;
+namespace MetaHash\Calculator;
 
-class Calculator
+class WalletFoging
 {
     const MIN_SCALE = 50;
     const RESULT_SCALE = 6;
