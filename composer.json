@@ -2,7 +2,7 @@
   "name": "sharapudinov/metahalc",
   "description": "MetaHash Forging Reward Calculator",
   "minimum-stability": "stable",
-  "license": "GPL",
+  "license": "MIT",
   "authors": [
     {
       "name": "Shamil Sharapudinov",
