@@ -19,6 +19,5 @@
     "ext-bcmath": "*",
     "ext-gmp": "*",
     "ext-json": "*",
-    "xboston/metahash": "dev-master"
   }
 }
