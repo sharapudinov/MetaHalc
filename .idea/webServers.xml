@@ -3,11 +3,27 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="3836b41a-5156-4720-a0fc-778844493894" name="jino php7.3+gmp" url="http://metahalculato.ru">
-        <fileTransfer host="ovz2.j626540.m843p.vps.myjino.ru" port="49283" rootFolder="/var/www/html/" accessType="SFTP">
+        <fileTransfer host="kvm1.j626540.zjyrz.vps.myjino.ru" port="49206" rootFolder="/var/www/html/" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="49283" />
+          <option name="port" value="49206" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="408ad7d4-ef1a-40db-9851-54fb496de951" name="NY dagger" url="http://173.234.27.137">
+        <fileTransfer host="173.234.27.137" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="80a2b29e-0c2d-423c-848a-d0746c358c79" name="NY avant-gard" url="http://173.234.27.139">
+        <fileTransfer host="173.234.27.139" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>
