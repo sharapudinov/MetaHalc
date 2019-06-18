@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    min-height: calc(100vh - 168px);
+}
+
+
+
 nav.custom-panel div.panel-block {
     padding: 0;
 }
@@ -38,4 +48,8 @@ div#space-delimiter{
 
 #proxytable{
     min-height: 3em;
+}
+
+#wait, #fetch-wait {
+    display: none;
 }

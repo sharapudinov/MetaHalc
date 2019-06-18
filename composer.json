@@ -18,6 +18,9 @@
     "php": ">=7.3",
     "ext-bcmath": "*",
     "ext-gmp": "*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "ext-curl": "*",
+    "mdanter/ecc": "^0.5.2",
+    "xboston/metahash": "dev-master"
   }
 }
